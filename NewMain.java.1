@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author 21cse092
+ */
+public class NewMain {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+      email obj = new email();
+      obj.fnread();
+     obj.fnGenerate();  
+    }
+   
+}
+class email
+{
+     String fn, ln;
+     Scanner s = new Scanner(System.in);
+   
+     public void fnread()
+     {
+          System.out.print("Enter first name : ");
+          fn = s.next();
+          System.out.print("Enter last name : ");
+          ln = s.next();
+     }
+   
+     public void fnGenerate()
+     {
+          if(fn.length()<3 || ln.length()<4)
+              System.out.print("invalid input. Email id cannot be generated.");
+          else
+          {
+              String emailid = fn.substring(0,3)+"."+ln.substring(0,4)+"@gmail.com";
+              System.out.println("Email id : "+emailid);
+          }
+     }
+}
